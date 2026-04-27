@@ -1,0 +1,30 @@
+---
+import Reveal from "./Reveal.astro";
+import { collaboration } from "../content/team.ts";
+
+// Split the paragraph at the last sentence.
+// The locked last sentence is: "Anyone could (and did) commit to any of the three."
+const lastSentence = "Anyone could (and did) commit to any of the three.";
+const lastIndex = collaboration.paragraph.lastIndexOf(lastSentence);
+const mainText =
+  lastIndex !== -1
+    ? collaboration.paragraph.slice(0, lastIndex).trim()
+    : collaboration.paragraph;
+const pullQuote = lastIndex !== -1 ? lastSentence : "";
+---
+
+<section data-section="collaboration" class="section-container">
+  <Reveal>
+    <h2 class="section-heading">How We Collaborated</h2>
+  </Reveal>
+  <Reveal>
+    <div class="collab-content">
+      <p class="collab-text">{mainText}</p>
+      {
+        pullQuote && (
+          <blockquote class="collab-pullquote">{pullQuote}</blockquote>
+        )
+      }
+    </div>
+  </Reveal>
+</section>
