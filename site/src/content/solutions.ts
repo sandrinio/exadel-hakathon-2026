@@ -49,6 +49,10 @@ export const solutions: readonly Solution[] = [
       "/assets/cleargate/08-ledger.jpg",
     ],
     accent: "cleargate",
+    cta: {
+      label: "View on GitHub",
+      href: "https://github.com/sandrinio/cleargate",
+    },
   },
   {
     id: "teemo",
@@ -93,6 +97,10 @@ export const solutions: readonly Solution[] = [
       "/assets/teemo/08-isolation.jpg",
     ],
     accent: "teemo",
+    cta: {
+      label: "View on GitHub",
+      href: "https://github.com/sandrinio/tee-mo",
+    },
   },
   {
     id: "exa",

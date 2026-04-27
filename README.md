@@ -40,7 +40,7 @@ ClearGate is the disciplined orchestration framework that turns Claude Code from
 
 > *One command. Zero chaos. Ready for the enterprise standard.*
 
-See: `ClearGate_AI_Orchestration.pdf`
+Repo: [github.com/sandrinio/cleargate](https://github.com/sandrinio/cleargate) · Deck: `ClearGate_AI_Orchestration.pdf`
 
 ---
 
@@ -59,7 +59,7 @@ Tee-Mo replaces the single-player browser-tab bottleneck with a **multiplayer wo
 
 > *Not a destination. The connective tissue of your workspace.*
 
-See: `Tee-Mo_Sovereign_Intelligence.pdf`
+Repo: [github.com/sandrinio/tee-mo](https://github.com/sandrinio/tee-mo) · Deck: `Tee-Mo_Sovereign_Intelligence.pdf`
 
 ---
 
