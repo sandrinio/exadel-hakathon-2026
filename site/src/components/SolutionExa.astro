@@ -1,0 +1,9 @@
+---
+import SolutionSection from "./_SolutionSection.astro";
+import { solutions } from "../content/solutions.ts";
+
+const solution = solutions.find((s) => s.id === "exa");
+if (!solution) throw new Error("Missing 'exa' entry in solutions.ts");
+---
+
+<SolutionSection solution={solution} index={3} />

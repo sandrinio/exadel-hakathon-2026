@@ -1,0 +1,87 @@
+---
+import Reveal from "./Reveal.astro";
+import type { Solution } from "../content/solutions.ts";
+
+interface Props {
+  solution: Solution;
+  index: 1 | 2 | 3;
+}
+
+const { solution, index } = Astro.props;
+---
+
+<section data-section={`solution-${solution.id}`} data-accent={solution.accent}>
+  <Reveal>
+    <header>
+      <p class="eyebrow">Solution {index} of 3</p>
+      <h2>{solution.name}</h2>
+      <p class="tagline">{solution.tagline}</p>
+    </header>
+  </Reveal>
+  <div class="pitch">{solution.pitch}</div>
+  <Reveal>
+    <ul class="bullets">
+      {
+        solution.bullets.map((b) => (
+          <li>
+            <article>
+              <h3>{b.title}</h3>
+              <p>{b.body}</p>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </Reveal>
+  <Reveal>
+    <figure class="visuals">
+      {
+        solution.visuals.length >= 3 ? (
+          solution.visuals.map((src, i) => (
+            <img
+              src={src}
+              alt={`${solution.id} · slide ${i + 1}`}
+              loading="lazy"
+              decoding="async"
+              width="1200"
+              height="675"
+            />
+          ))
+        ) : solution.visuals.length === 1 ? (
+          <img
+            src={solution.visuals[0]}
+            alt={`${solution.id}`}
+            loading="lazy"
+            decoding="async"
+            width="1200"
+            height="675"
+          />
+        ) : null
+      }
+    </figure>
+  </Reveal>
+  {
+    solution.cta && (
+      <div class="cta-wrap">
+        <a class="cta" href={solution.cta.href} target="_blank" rel="noopener">
+          <span>{solution.cta.label}</span>
+          <svg
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M15 3h6v6" />
+            <path d="M10 14 21 3" />
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+          </svg>
+        </a>
+      </div>
+    )
+  }
+</section>
