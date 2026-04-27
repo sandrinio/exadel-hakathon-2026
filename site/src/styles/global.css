@@ -375,26 +375,47 @@ body {
   display: block;
 }
 
-/* CTA button-styled anchor */
+/* CTA wrapper centers and lays out one or more buttons */
+[data-section^="solution-"] .cta-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* CTA button-styled anchor (outlined, default) */
 [data-section^="solution-"] a.cta {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   color: var(--accent);
+  background: transparent;
   border: 1px solid currentColor;
   border-radius: 0.5rem;
   padding: 0.625rem 1.25rem;
   font-size: 0.9375rem;
   font-weight: 500;
   text-decoration: none;
-  margin: 0 auto;
   transition:
     background 200ms ease,
-    box-shadow 200ms ease;
+    box-shadow 200ms ease,
+    color 200ms ease;
 }
 
 [data-section^="solution-"] a.cta:hover {
   background: color-mix(in srgb, var(--accent) 10%, transparent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* Primary CTA: filled accent (used when a section has multiple CTAs and the first one is the action) */
+[data-section^="solution-"] a.cta.cta-primary {
+  color: #0a0a0a;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+[data-section^="solution-"] a.cta.cta-primary:hover {
+  background: color-mix(in srgb, var(--accent) 88%, white);
   box-shadow: 0 0 0 1px var(--accent);
 }
 
@@ -406,6 +427,11 @@ body {
 
   [data-section^="solution-"] a.cta:hover {
     background: color-mix(in srgb, var(--accent) 10%, transparent);
+    box-shadow: none;
+  }
+
+  [data-section^="solution-"] a.cta.cta-primary:hover {
+    background: var(--accent);
     box-shadow: none;
   }
 }

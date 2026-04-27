@@ -59,7 +59,7 @@ Tee-Mo replaces the single-player browser-tab bottleneck with a **multiplayer wo
 
 > *Not a destination. The connective tissue of your workspace.*
 
-Repo: [github.com/sandrinio/tee-mo](https://github.com/sandrinio/tee-mo) · Deck: `Tee-Mo_Sovereign_Intelligence.pdf`
+Try it: [teemo.soula.ge](https://teemo.soula.ge) · Repo: [github.com/sandrinio/tee-mo](https://github.com/sandrinio/tee-mo) · Deck: `Tee-Mo_Sovereign_Intelligence.pdf`
 
 ---
 

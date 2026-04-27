@@ -6,7 +6,7 @@ export type Solution = {
   bullets: { title: string; body: string }[];
   visuals: string[];
   accent: "cleargate" | "teemo" | "exa";
-  cta?: { label: string; href: string };
+  ctas?: { label: string; href: string }[];
 };
 
 export const solutions: readonly Solution[] = [
@@ -49,10 +49,12 @@ export const solutions: readonly Solution[] = [
       "/assets/cleargate/08-ledger.jpg",
     ],
     accent: "cleargate",
-    cta: {
-      label: "View on GitHub",
-      href: "https://github.com/sandrinio/cleargate",
-    },
+    ctas: [
+      {
+        label: "View on GitHub",
+        href: "https://github.com/sandrinio/cleargate",
+      },
+    ],
   },
   {
     id: "teemo",
@@ -97,10 +99,16 @@ export const solutions: readonly Solution[] = [
       "/assets/teemo/08-isolation.jpg",
     ],
     accent: "teemo",
-    cta: {
-      label: "View on GitHub",
-      href: "https://github.com/sandrinio/tee-mo",
-    },
+    ctas: [
+      {
+        label: "Try Tee-Mo",
+        href: "https://teemo.soula.ge",
+      },
+      {
+        label: "View on GitHub",
+        href: "https://github.com/sandrinio/tee-mo",
+      },
+    ],
   },
   {
     id: "exa",
@@ -144,9 +152,11 @@ export const solutions: readonly Solution[] = [
       "/assets/exa/07-arch-scale.png",
     ],
     accent: "exa",
-    cta: {
-      label: "View on GitHub",
-      href: "https://github.com/eugene-burachevskiy/exa-slack-agent",
-    },
+    ctas: [
+      {
+        label: "View on GitHub",
+        href: "https://github.com/eugene-burachevskiy/exa-slack-agent",
+      },
+    ],
   },
 ];

@@ -61,26 +61,33 @@ const { solution, index } = Astro.props;
     </figure>
   </Reveal>
   {
-    solution.cta && (
+    solution.ctas && solution.ctas.length > 0 && (
       <div class="cta-wrap">
-        <a class="cta" href={solution.cta.href} target="_blank" rel="noopener">
-          <span>{solution.cta.label}</span>
-          <svg
-            viewBox="0 0 24 24"
-            width="20"
-            height="20"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
+        {solution.ctas.map((cta, i) => (
+          <a
+            class:list={["cta", i === 0 && solution.ctas!.length > 1 ? "cta-primary" : null]}
+            href={cta.href}
+            target="_blank"
+            rel="noopener"
           >
-            <path d="M15 3h6v6" />
-            <path d="M10 14 21 3" />
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-          </svg>
-        </a>
+            <span>{cta.label}</span>
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M15 3h6v6" />
+              <path d="M10 14 21 3" />
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            </svg>
+          </a>
+        ))}
       </div>
     )
   }
