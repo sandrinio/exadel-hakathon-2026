@@ -1,0 +1,37 @@
+# ClearGate per-repo configuration.
+# Copy to .cleargate/config.yml and edit. All keys optional.
+
+# wiki:
+#   index_token_ceiling: 8000   # chars budget for wiki/index.md (STORY-015-03)
+
+# gates:
+#   precommit: "<command run before every commit — typecheck + tests>"
+#   test: "<command to run the test suite>"
+#   typecheck: "<command to run the type checker>"
+#   lint: "<command to run the linter>"
+
+# Node example:
+# gates:
+#   precommit: "npm run typecheck && npm test"
+#   test: "npm test"
+#   typecheck: "npm run typecheck"
+#   lint: "npm run lint"
+
+# Go example:
+# gates:
+#   precommit: "go vet ./... && go test ./..."
+#   test: "go test ./..."
+#   typecheck: "go build ./..."
+
+# Python example:
+# gates:
+#   precommit: "mypy . && pytest"
+#   test: "pytest"
+#   typecheck: "mypy ."
+
+# Rust example:
+# gates:
+#   precommit: "cargo check && cargo test"
+#   test: "cargo test"
+#   typecheck: "cargo check"
+#   lint: "cargo clippy"

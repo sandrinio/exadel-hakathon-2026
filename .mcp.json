@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "cleargate": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "cleargate@0.8.1",
+        "mcp",
+        "serve"
+      ]
+    }
+  }
+}
