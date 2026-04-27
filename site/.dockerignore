@@ -1,0 +1,11 @@
+# Build outputs
+**/node_modules
+**/dist
+**/.astro
+**/.cleargate
+**/.claude
+**/.git
+**/.github
+**/team-photos
+*.log
+.DS_Store

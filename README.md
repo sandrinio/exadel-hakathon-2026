@@ -97,3 +97,9 @@ Three different altitudes, one philosophy: **structure beats magic.** Give an AI
 ---
 
 <sub>Built with passion at **Exadel Code Fest 2026** by the **Slop-Masters** team.</sub>
+
+---
+
+🌐 **Live site:** [hakathon2026.soula.ge](https://hakathon2026.soula.ge)
+
+Auto-deployed from `main` via Coolify. Source for the deployed page lives under [`site/`](./site/). For build / deploy details see `site/Dockerfile`.
