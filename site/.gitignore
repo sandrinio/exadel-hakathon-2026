@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# PDF copies produced by the prebuild hook (source PDFs live at repo root)
+*.pdf
