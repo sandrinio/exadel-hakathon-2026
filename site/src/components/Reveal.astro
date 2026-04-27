@@ -1,0 +1,35 @@
+---
+// no props; the wrapper just adds .reveal-init to its single child
+---
+
+<div class="reveal-init"><slot /></div>
+
+<script is:inline>
+  if (!window.__revealInit) {
+    window.__revealInit = true;
+    (function () {
+      var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce) {
+        document.querySelectorAll(".reveal-init").forEach(function (n) {
+          n.classList.add("reveal-in");
+        });
+        return;
+      }
+      var obs = new IntersectionObserver(
+        function (entries) {
+          for (var i = 0; i < entries.length; i++) {
+            var e = entries[i];
+            if (e.isIntersecting) {
+              e.target.classList.add("reveal-in");
+              obs.unobserve(e.target);
+            }
+          }
+        },
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll(".reveal-init").forEach(function (n) {
+        obs.observe(n);
+      });
+    })();
+  }
+</script>

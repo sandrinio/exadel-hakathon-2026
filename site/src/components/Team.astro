@@ -1,0 +1,31 @@
+---
+import Reveal from "./Reveal.astro";
+import { team } from "../content/team.ts";
+---
+
+<section data-section="team" class="section-container">
+  <h2 class="section-heading">The Team</h2>
+  <div class="team-grid">
+    {
+      team.map((member) => (
+        <Reveal>
+          <div class="team-card">
+            <img
+              src={member.photo}
+              alt={member.name}
+              class="team-photo"
+              loading="lazy"
+              decoding="async"
+              width="512"
+              height="512"
+            />
+            <p class="team-name">{member.name}</p>
+            <a href={`mailto:${member.email}`} class="team-email">
+              {member.email}
+            </a>
+          </div>
+        </Reveal>
+      ))
+    }
+  </div>
+</section>
