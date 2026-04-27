@@ -7,18 +7,15 @@
 <script is:inline>
   if (!window.__revealInit) {
     window.__revealInit = true;
-    (function () {
-      var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduce) {
-        document.querySelectorAll(".reveal-init").forEach(function (n) {
-          n.classList.add("reveal-in");
-        });
+    const init = () => {
+      const nodes = document.querySelectorAll(".reveal-init");
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        nodes.forEach((n) => n.classList.add("reveal-in"));
         return;
       }
-      var obs = new IntersectionObserver(
-        function (entries) {
-          for (var i = 0; i < entries.length; i++) {
-            var e = entries[i];
+      const obs = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
             if (e.isIntersecting) {
               e.target.classList.add("reveal-in");
               obs.unobserve(e.target);
@@ -27,9 +24,12 @@
         },
         { threshold: 0.1 },
       );
-      document.querySelectorAll(".reveal-init").forEach(function (n) {
-        obs.observe(n);
-      });
-    })();
+      nodes.forEach((n) => obs.observe(n));
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init, { once: true });
+    } else {
+      init();
+    }
   }
 </script>
