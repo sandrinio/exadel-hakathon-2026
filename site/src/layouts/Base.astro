@@ -47,5 +47,34 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body>
     <slot />
+    <script is:inline>
+      if (!window.__revealInit) {
+        window.__revealInit = true;
+        const init = () => {
+          const nodes = document.querySelectorAll(".reveal-init");
+          if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            nodes.forEach((n) => n.classList.add("reveal-in"));
+            return;
+          }
+          const obs = new IntersectionObserver(
+            (entries) => {
+              for (const e of entries) {
+                if (e.isIntersecting) {
+                  e.target.classList.add("reveal-in");
+                  obs.unobserve(e.target);
+                }
+              }
+            },
+            { threshold: 0.1 },
+          );
+          nodes.forEach((n) => obs.observe(n));
+        };
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", init, { once: true });
+        } else {
+          init();
+        }
+      }
+    </script>
   </body>
 </html>
