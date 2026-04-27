@@ -232,3 +232,182 @@ body {
 }
 
 /* === /STORY-001-04 === */
+
+/* === STORY-001-05: solution sections === */
+
+/* Per-accent CSS variable mapping */
+[data-accent="cleargate"] {
+  --accent: var(--color-accent-cleargate);
+}
+[data-accent="teemo"] {
+  --accent: var(--color-accent-teemo);
+}
+[data-accent="exa"] {
+  --accent: var(--color-accent-exa);
+}
+
+/* Section-wide rules */
+[data-section^="solution-"] {
+  padding: 6rem clamp(1rem, 4vw, 2.5rem);
+  background:
+    radial-gradient(
+      at top right,
+      color-mix(in srgb, var(--accent) 8%, transparent),
+      transparent 60%
+    ),
+    var(--color-bg);
+}
+
+[data-section^="solution-"] .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  color: var(--accent);
+  margin: 0 0 0.75rem;
+}
+
+[data-section^="solution-"] h2 {
+  font-family: var(--font-sans);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-fg);
+  margin: 0 0 0.75rem;
+}
+
+[data-section^="solution-"] .tagline {
+  font-size: 1.25rem;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+[data-section^="solution-"] header {
+  max-width: 64rem;
+  margin: 0 auto 2.5rem;
+}
+
+[data-section^="solution-"] .pitch {
+  max-width: 48rem;
+  margin: 0 auto 3rem;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--color-fg);
+}
+
+/* Bullet grid */
+[data-section^="solution-"] ul.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 3rem;
+  max-width: 64rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  [data-section^="solution-"] ul.bullets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+[data-section^="solution-"] ul.bullets li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+[data-section^="solution-"] ul.bullets article {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  height: 100%;
+}
+
+[data-section^="solution-"] ul.bullets article h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-fg);
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+
+[data-section^="solution-"] ul.bullets article p {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  line-height: 1.625;
+  margin: 0.5rem 0 0;
+}
+
+/* Visuals asymmetric grid */
+[data-section^="solution-"] figure.visuals {
+  max-width: 64rem;
+  margin: 0 auto 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  [data-section^="solution-"] figure.visuals {
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  [data-section^="solution-"] figure.visuals img:first-child {
+    grid-row: span 2;
+  }
+}
+
+[data-section^="solution-"] figure.visuals img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  outline: 1px solid rgba(255, 255, 255, 0.1);
+  display: block;
+}
+
+/* CTA button-styled anchor */
+[data-section^="solution-"] a.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent);
+  border: 1px solid currentColor;
+  border-radius: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0 auto;
+  transition:
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
+[data-section^="solution-"] a.cta:hover {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* Reduced-motion: disable CTA hover transitions */
+@media (prefers-reduced-motion: reduce) {
+  [data-section^="solution-"] a.cta {
+    transition: none;
+  }
+
+  [data-section^="solution-"] a.cta:hover {
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+    box-shadow: none;
+  }
+}
+
+/* === /STORY-001-05 === */
