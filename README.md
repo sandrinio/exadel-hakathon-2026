@@ -100,6 +100,6 @@ Three different altitudes, one philosophy: **structure beats magic.** Give an AI
 
 ---
 
-🌐 **Live site:** [hakathon2026.soula.ge](https://hakathon2026.soula.ge)
+🌐 **Live site:** [hackathon2026.soula.ge](https://hackathon2026.soula.ge)
 
 Auto-deployed from `main` via Coolify. Source for the deployed page lives under [`site/`](./site/). For build / deploy details see `site/Dockerfile`.

@@ -29,5 +29,5 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 # Coolify configuration:
 #   Build context: repository root (NOT /site)
 #   Dockerfile path: site/Dockerfile
-#   Domain: hakathon2026.soula.ge → :80
+#   Domain: hackathon2026.soula.ge → :80
 #   Auto-deploy on push to main
