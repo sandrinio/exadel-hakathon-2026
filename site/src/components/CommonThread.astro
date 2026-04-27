@@ -1,0 +1,43 @@
+---
+import Reveal from "./Reveal.astro";
+import { thread } from "../content/thread.ts";
+---
+
+<section data-section="common-thread">
+  <div class="thread-container">
+    <Reveal>
+      <header class="thread-header">
+        <h2 class="thread-heading">The Common Thread</h2>
+        <p class="thread-intro">
+          Three altitudes, one philosophy: structure beats magic.
+        </p>
+      </header>
+    </Reveal>
+    <Reveal>
+      <div class="thread-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Axis</th>
+              <th scope="col" class="th-cleargate">ClearGate</th>
+              <th scope="col" class="th-teemo">Tee-Mo</th>
+              <th scope="col" class="th-exa">Exa</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              thread.map((row) => (
+                <tr>
+                  <th scope="row">{row.axis}</th>
+                  <td data-label="ClearGate">{row.cleargate}</td>
+                  <td data-label="Tee-Mo">{row.teemo}</td>
+                  <td data-label="Exa">{row.exa}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </Reveal>
+  </div>
+</section>

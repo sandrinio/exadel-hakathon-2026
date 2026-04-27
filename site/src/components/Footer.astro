@@ -1,0 +1,61 @@
+---
+import Reveal from "./Reveal.astro";
+import { team } from "../content/team.ts";
+
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-columns">
+      <Reveal>
+        <div class="footer-col footer-col--identity">
+          <p class="footer-eyebrow">Exadel Code Fest 2026</p>
+          <p class="footer-wordmark">Slop-Masters</p>
+          <p class="footer-copy">&copy; {year}</p>
+        </div>
+      </Reveal>
+      <Reveal>
+        <div class="footer-col footer-col--decks">
+          <p class="footer-col-heading">Read the decks</p>
+          <ul class="footer-links">
+            <li>
+              <a href="/ClearGate_AI_Orchestration.pdf"
+                >ClearGate · AI Orchestration</a
+              >
+            </li>
+            <li>
+              <a href="/Tee-Mo_Sovereign_Intelligence.pdf"
+                >Tee-Mo · Sovereign Intelligence</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/eugene-burachevskiy/exa-slack-agent"
+                target="_blank"
+                rel="noopener">Exa · GitHub repo</a
+              >
+            </li>
+          </ul>
+        </div>
+      </Reveal>
+      <Reveal>
+        <div class="footer-col footer-col--reach">
+          <p class="footer-col-heading">Reach out</p>
+          <ul class="footer-links">
+            {
+              team.map((member) => (
+                <li>
+                  <a href={`mailto:${member.email}`}>{member.email}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </Reveal>
+    </div>
+    <div class="footer-divider">
+      <p class="footer-subline">Built with passion at Exadel Code Fest 2026.</p>
+    </div>
+  </div>
+</footer>
