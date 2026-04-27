@@ -19,9 +19,11 @@
     "astro": "^6.1.9"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.8",
     "@tailwindcss/vite": "^4.2.4",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
-    "tailwindcss": "^4.2.4"
+    "tailwindcss": "^4.2.4",
+    "typescript": "^5.9.3"
   }
 }
